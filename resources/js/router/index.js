@@ -4,6 +4,8 @@ import HomeComponent from "../components/HomeComponent.vue";
 import LoginComponent from "../components/Auth/LoginComponent.vue";
 import DashboardComponent from "../components/DashboardComponent.vue";
 
+import EditUserComponent from "../components/User/EditUserComponent.vue";
+
 import store from "../store";
 
 Vue.use(VueRouter);
@@ -20,6 +22,11 @@ const routes = [
         component: LoginComponent
     },
     {
+        name: "userEdit",
+        path: "/user/edit",
+        component: EditUserComponent
+    },
+    {
         name: "dashboard",
         path: "/dashboard",
         component: DashboardComponent,
@@ -31,6 +38,11 @@ const routes = [
             // console.log('middleware');
             next();
         }
+    },
+    {
+        name: "login",
+        path: "/login",
+        component: LoginComponent
     },
     {
         name: "404",

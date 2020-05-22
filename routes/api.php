@@ -11,4 +11,7 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     Route::post('logout', 'Auth\AuthApiController@logout');
     Route::post('refresh', 'Auth\AuthApiController@refresh');
     Route::get('me', 'Auth\AuthApiController@me');
+    //Route::post('user/{user}', 'Api\User\UserController@update');
+    Route::resource('/user', 'Api\User\UserController', ['only' => ['create', 'store', 'index', 'show', 'edit', 'update', 'destroy']]);
+    //Route::resource('/user', 'Api\User\UserController');
 });
