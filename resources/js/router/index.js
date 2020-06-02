@@ -5,6 +5,8 @@ import LoginComponent from "../components/Auth/LoginComponent.vue";
 import DashboardComponent from "../components/DashboardComponent.vue";
 
 import EditUserComponent from "../components/User/EditUserComponent.vue";
+import MessageComponent from "../components/Message/MessageComponent.vue";
+
 
 import store from "../store";
 
@@ -25,6 +27,11 @@ const routes = [
         name: "userEdit",
         path: "/user/edit",
         component: EditUserComponent
+    },
+    {
+        name: "message",
+        path: "/message",
+        component: MessageComponent
     },
     {
         name: "dashboard",

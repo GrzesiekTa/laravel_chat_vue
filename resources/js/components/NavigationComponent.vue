@@ -41,6 +41,7 @@
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <router-link :to="{ name: 'userEdit' }" class="dropdown-item">Edycja</router-link>
+                  <router-link :to="{ name: 'message' }" class="dropdown-item">Chat</router-link>
                 </div>
               </li>
 
