@@ -13,7 +13,7 @@ class CreateConversationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('conversations', function (Blueprint $table) {
+        Schema::create('conversation', function (Blueprint $table) {
             $table->id();
             $table->string('name', 64);
             $table->bigInteger('user_id')->unsigned();
@@ -29,6 +29,6 @@ class CreateConversationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conversations');
+        Schema::dropIfExists('conversation');
     }
 }

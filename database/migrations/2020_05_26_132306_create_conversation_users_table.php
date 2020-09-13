@@ -14,11 +14,16 @@ class CreateConversationUsersTable extends Migration
     public function up()
     {
         Schema::create('conversation_user', function (Blueprint $table) {
-            $table->bigInteger('user_id')->unsigned();
+            $table->id();
+
+            $table->bigInteger('recipient_user_id')->unsigned();
+            $table->foreign('recipient_user_id')->references('id')->on('users');
+            $table->bigInteger('sender_user_id')->unsigned();
+            $table->foreign('sender_user_id')->references('id')->on('users');
             $table->boolean('unread')->default(true);
             $table->bigInteger('conversation_id')->unsigned();
-            $table->foreign('conversation_id')->references('id')->on('conversations');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('conversation_id')->references('id')->on('conversation');
+            $table->json('data')->default('{"message": "czesc"}');
             $table->timestamps();
         });
     }

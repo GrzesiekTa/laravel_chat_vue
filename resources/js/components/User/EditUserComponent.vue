@@ -50,16 +50,12 @@ export default {
     };
   },
   created() {
-    this.avatar =
-      "/storage/users/" +
-      this.user.id +
-      "/avatars/" +
-      this.user.images.avatar.small;
+    this.avatar = this.user.avatatPath; 
   },
   computed: {
     ...mapGetters({
       authenticated: "auth/authenticated",
-      user: "auth/user"
+      user: "auth/user",
     })
   },
   methods: {

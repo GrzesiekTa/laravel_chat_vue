@@ -22,6 +22,14 @@ export default {
         SET_USER(state, data) {
             // console.log(data);
             state.user = data;
+            //TODO ???
+            if(state.user) {
+                state.user.avatatPath = '';
+            }
+
+            if(state.user && (state.user.images.length != 0)) {
+                state.user.avatatPath = "/storage/users/" + state.user.id + "/avatars/" + state.user.images.avatar.small;
+            }
         }
     },
     actions: {

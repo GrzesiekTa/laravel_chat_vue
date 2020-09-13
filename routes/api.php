@@ -17,4 +17,7 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     //Route::resource('/user', 'Api\User\UserController');
     Route::get('messages', 'Api\Massage\MassageController@fetchMessages');
     Route::post('messages', 'Api\Massage\MassageController@sendMessages');
+
+    Route::get('conversations', 'Api\Conversation\ConversationUserController@testttt');
+    Route::get('countUnreadMessages', 'Api\Conversation\ConversationUserController@countUnreadMessages');
 });
